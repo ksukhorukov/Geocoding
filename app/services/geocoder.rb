@@ -14,8 +14,13 @@ class Geocoder
     url += '&components=country:DE'
     url += '&key=' + ENV['api_key']
     uri = URI(url)
-    data = Net::HTTP.get(uri)
-    @result = JSON.parse(data)
+
+    begin
+      data = Net::HTTP.get(uri)
+      @result = JSON.parse(data)
+    rescue 
+      @result = 'error'
+end
   end
 
   def response
