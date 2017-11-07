@@ -1,25 +1,20 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+# GEOCODING
 
 * Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
+2.4.2
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+``rspec``
 
-* Deployment instructions
+* Run
 
-* ...
-# Geocoding
+``rails s``
+
+* Use
+
+``$ curl http://localhost:3000/?location=Berlin
+
+{"status":"ok","latitude":52.52000659999999,"longitude":13.404954}
+``
