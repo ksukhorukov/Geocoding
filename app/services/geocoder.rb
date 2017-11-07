@@ -20,11 +20,12 @@ class Geocoder
 
   def response
     unless result['results'].nil?
-      if result['results'][0]['formatted_address'] == 'Germany'
+      body = result['results'][0]
+      if body['formatted_address'] == 'Germany'
         { status: 'error', message: 'location not found' }
       else
-        lat = result['results'][0]['geometry']['location']['lat']
-        lng = result['results'][0]['geometry']['location']['lng']
+        lat = body['geometry']['location']['lat']
+        lng = body['geometry']['location']['lng']
         { status: 'ok', latitude: lat, longitude: lng }
       end
     else
