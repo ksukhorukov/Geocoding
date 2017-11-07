@@ -6,7 +6,7 @@
 
 * Configure
 
-``app/config/application.yml``
+``config/application.yml``
 
 * How to run the test suite
 
