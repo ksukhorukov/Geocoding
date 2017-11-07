@@ -5,7 +5,7 @@ class Geocoder
   attr_reader :location, :result
 
   def initialize(location)
-    @location = location || ''
+    @location = location.nil? ?  '' : location.downcase
     request
   end
 
@@ -26,7 +26,7 @@ end
   def response
     unless result['results'].nil?
       body = result['results'][0]
-      if body['formatted_address'] == 'Germany'
+      if body['formatted_address'] == 'Germany' && location != 'germany'
         { status: 'error', message: 'location not found' }
       else
         lat = body['geometry']['location']['lat']
