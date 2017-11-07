@@ -19,12 +19,16 @@ class Geocoder
   end
 
   def response
-    if result['results'][0]['formatted_address'] == 'Germany'
-      { status: 'error', message: 'location not found' }
+    unless result['results'].nil?
+      if result['results'][0]['formatted_address'] == 'Germany'
+        { status: 'error', message: 'location not found' }
+      else
+        lat = result['results'][0]['geometry']['location']['lat']
+        lng = result['results'][0]['geometry']['location']['lng']
+        { status: 'ok', latitude: lat, longitude: lng }
+      end
     else
-      lat = result['results'][0]['geometry']['location']['lat']
-      lng = result['results'][0]['geometry']['location']['lng']
-      { status: 'ok', latitude: lat, longitude: lng }
+      { status: 'error', message: 'geolcation service is temporary unavailable' }
     end
   end
 end
