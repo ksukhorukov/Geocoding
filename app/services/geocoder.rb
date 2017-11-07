@@ -24,7 +24,7 @@ class Geocoder
   end
 
   def response
-    unless result['results'].nil?
+    unless result == 'error'
       body = result['results'][0]
       if body['formatted_address'] == 'Germany' && location != 'germany'
         { status: 'error', message: 'location not found' }
