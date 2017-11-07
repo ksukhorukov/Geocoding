@@ -19,7 +19,6 @@
 * Use
 
 ```
-$ curl http://localhost:3000/?location=Berlin
-
-{"status":"ok","latitude":52.52000659999999,"longitude":13.404954}
+$ curl http://localhost:3000/?location=checkpoint%20charlie
+{"status":"ok","latitude":52.5074434,"longitude":13.3903913}
 ```
