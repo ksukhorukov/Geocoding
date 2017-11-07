@@ -4,6 +4,10 @@
 
 2.4.2
 
+* Configure
+
+``app/config/application.yml``
+
 * How to run the test suite
 
 ``rspec``
