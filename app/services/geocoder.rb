@@ -20,7 +20,7 @@ class Geocoder
       @result = JSON.parse(data)
     rescue 
       @result = 'error'
-end
+    end
   end
 
   def response
