@@ -14,7 +14,8 @@
 
 * Use
 
-``$ curl http://localhost:3000/?location=Berlin
+```
+$ curl http://localhost:3000/?location=Berlin
 
 {"status":"ok","latitude":52.52000659999999,"longitude":13.404954}
-``
+```
